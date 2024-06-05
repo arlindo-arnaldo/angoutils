@@ -7,13 +7,12 @@ use NumberFormatter;
 class AngoUtils
 {
 
-    public static function currency(float $value) : string
+    public static function currency(float $value): string
     {
         if ($value) {
             $rules = numfmt_create("pt_AO", NumberFormatter::CURRENCY);
             return numfmt_format_currency($rules, $value, 'AOA');
         }
-        
     }
 
     public static function validateIDNumber(string $id)
@@ -22,27 +21,35 @@ class AngoUtils
 
         if (strlen($id) == 14) {
             $id_number = str_split($id);
-            for ($i=0; $i <= 8 ; $i++) { 
-               if (is_numeric($id_number[$i])) {
-                continue;
-               }else{
-                return "Erro";
-               }
+            for ($i = 0; $i <= 8; $i++) {
+                if (is_numeric($id_number[$i])) {
+                    continue;
+                } else {
+                    return false;
+                }
             }
-            if(is_string($id_number[9]) && is_string($id_number[10])){
+            if (is_string($id_number[9]) && is_string($id_number[10])) {
                 $prov = strtoupper($id_number[9]) . strtoupper($id_number[10]);
             }
-            return $prov;
-            
+            for ($i = 11; $i <= 13; $i++) {
+                if (is_numeric($id_number[$i])) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            if (in_array($prov, $abbr)) {
+                return true;
+            }
         }
+        return false;
     }
 
-    public static function validateNIF(string $id){
-        
-            return strlen($id);
-        
+    public static function validateNIF(string $id)
+    {
+
+        return strlen($id);
     }
 }
 
-print_r(AngoUtils::validateIDNumber("00A202377LA046"));
-
+var_dump(AngoUtils::validateIDNumber("088202377la063"));
