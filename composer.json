@@ -1,0 +1,17 @@
+{
+    "name": "vendor/angohelper",
+    "description": "Uma classe php",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Angohelper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arlindo",
+            "email": "arlindoarnaldocassuende@gmail.com"
+        }
+    ],
+    "require": {}
+}
