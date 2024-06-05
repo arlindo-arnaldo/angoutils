@@ -9,12 +9,12 @@ class ComposerStaticInit9fad56506132a248a067c0d213048322
     public static $prefixLengthsPsr4 = array (
         'V' => 
         array (
-            'Vendor\\Angohelper\\' => 18,
+            'Vendor\\AngoUtils\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Vendor\\Angohelper\\' => 
+        'Vendor\\AngoUtils\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

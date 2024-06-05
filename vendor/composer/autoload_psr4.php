@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Vendor\\Angohelper\\' => array($baseDir . '/src'),
+    'Vendor\\AngoUtils\\' => array($baseDir . '/src'),
 );

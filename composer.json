@@ -1,10 +1,10 @@
 {
-    "name": "vendor/angohelper",
+    "name": "vendor/angoutils",
     "description": "Uma classe php",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Vendor\\Angohelper\\": "src/"
+            "Vendor\\AngoUtils\\": "src/"
         }
     },
     "authors": [
