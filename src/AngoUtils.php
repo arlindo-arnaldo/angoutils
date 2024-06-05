@@ -65,35 +65,37 @@ class AngoUtils implements AngoUtilsInterface
         if (!$code) {
             $code_id = "";
         }
-
          if(is_numeric($number)) {
             if (strlen($number) == 9) {
                 $number = str_split($number);
-                $formated_number = [];
-                $formated_number[0] = $number[0];
-                $formated_number[1] = $number[1];
-                $formated_number[2] = $number[2];
-                $formated_number[3] = "-";
-                $formated_number[4] = $number[3];
-                $formated_number[5] = $number[4];
-                $formated_number[6] = $number[5];
-                $formated_number[7] = "-";
-                $formated_number[8] = $number[6];
-                $formated_number[9] = $number[7];
-                $formated_number[10] = $number[8];
-                
-                $formated ="";
-                foreach ($formated_number as $f) {
-                    $formated .= $f;
+                $formated_number_array = [];
+                for ($i=0; $i <= 10 ; $i++) { 
+                    if ($i >= 0 && $i < 3) {
+                        $formated_number_array[$i] = $number[$i];
+                    }
+                    if ($i == 3 || $i == 7) {
+                        $formated_number_array[$i] = "-";
+                        continue;
+                    }
+                    if ($i > 3 && $i <7) {
+                        $formated_number_array[$i] = $number[$i-1];
+                        continue;
+                    }
+                    if ($i > 7 && $i <= 10) {
+                        $formated_number_array[$i] = $number[$i-2];
+                        continue;
+                    }   
                 }
-                return $code_id.$formated;
-                
+                $formated_number_string ="";
+                foreach ($formated_number_array as $f) {
+                    $formated_number_string .= $f;
+                }
+                return $code_id.$formated_number_string;
             }
         }else{
             return "Erro";
         }
         
-        //return strlen($number);
         
     }
     public static function formatDate(int $timestamp): string
@@ -136,8 +138,6 @@ class AngoUtils implements AngoUtilsInterface
     }
     public static function getAllProvinces(): array
     {
-        
-        
         return $_SESSION['prov'];
     }
     public static function getProvince(string $iso_code): array
