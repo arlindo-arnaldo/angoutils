@@ -5,6 +5,8 @@ namespace AngoUtils;
 session_start();
 
 require './interface/AngoUtilsInterface.php';
+
+use InvalidArgumentException;
 use NumberFormatter;
 $_SESSION['prov'] = [
     ['name'=> 'Bengo', 'iso' => 'BGO', 'capital'=>'Caxito', 'municipalities' =>['Ambriz', 'Bula Atumba', 'Dande', 'Dembos', 'Nambuangongo', 'Pango Aluquém'] ],
@@ -91,16 +93,23 @@ class AngoUtils implements AngoUtilsInterface
                     $formated_number_string .= $f;
                 }
                 return $code_id.$formated_number_string;
+            }else{
+                throw new InvalidArgumentException("O número de telefone deve conter 9 Dígitos.".strlen($number)." Digitos foi passado");  
             }
         }else{
-            return "Erro";
+            throw new InvalidArgumentException("O número de telefone deve ser uma string numérica");
         }
         
         
     }
-    public static function formatDate(int $timestamp): string
+    public static function formatDate(string $timestamp): string
     {
-        return "";
+        if (is_numeric($timestamp)) {
+            throw new InvalidArgumentException("A função espera receber uma data no formato de string. Use {-} para separar dia, mês e ano");
+            die;
+        }else{
+            return date('d M. Y', strtotime($timestamp)); 
+        } 
     }
     public static function validateIDNumber(string $id): bool
     {
@@ -154,4 +163,6 @@ foreach (AngoUtils::getAllProvinces() as $prov) {
     }
 }*/
 
-print_r(AngoUtils::formatPhoneNumber("943148227", true));
+//print_r(AngoUtils::formatPhoneNumber("94314822722", true));
+
+print_r(AngoUtils::formatDate('05-06-2024'));
