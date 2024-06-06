@@ -8,70 +8,69 @@ require './interface/AngoUtilsInterface.php';
 
 use InvalidArgumentException;
 use NumberFormatter;
-$_SESSION['prov'] = [
-    ['name'=> 'Bengo', 'iso' => 'BGO', 'capital'=>'Caxito', 'municipalities' =>['Ambriz', 'Bula Atumba', 'Dande', 'Dembos', 'Nambuangongo', 'Pango Aluquém'] ],
 
-    ['name'=> 'Benguela', 'iso' => 'BGU', 'capital'=>'Benguela', 'municipalities' =>['Balombo', 'Baía Farta', 'Benguela', 'Bocoio', 'Caimbando', 'Catumbela', 'Chongorói', 'Cubal', 'Ganda', 'Lobito'] ],
+$_SESSION['provinces'] = [
+    ['name' => 'Bengo', 'iso' => 'BGO', 'capital' => 'Caxito', 'municipalities' => ['Ambriz', 'Bula Atumba', 'Dande', 'Dembos', 'Nambuangongo', 'Pango Aluquém']],
 
-    ['name'=> 'Bié', 'iso' => 'BIE', 'capital'=>'Cuito', 'municipalities' =>['Andulo', 'Camacupa', 'Catabola', 'Chinguar', 'Chitembo', 'Cuemba', 'Cunhinga', 'Cuíto', 'Nharea'] ],
+    ['name' => 'Benguela', 'iso' => 'BGU', 'capital' => 'Benguela', 'municipalities' => ['Balombo', 'Baía Farta', 'Benguela', 'Bocoio', 'Caimbando', 'Catumbela', 'Chongorói', 'Cubal', 'Ganda', 'Lobito']],
 
-    ['name'=> 'Cabinda', 'iso' => 'CAB', 'capital'=>'Cabinda', 'municipalities' =>['Belize', 'Buco-Zau', 'Cabinda', 'Cacongo'] ],
+    ['name' => 'Bié', 'iso' => 'BIE', 'capital' => 'Cuito', 'municipalities' => ['Andulo', 'Camacupa', 'Catabola', 'Chinguar', 'Chitembo', 'Cuemba', 'Cunhinga', 'Cuíto', 'Nharea']],
 
-    ['name'=> 'Cuando-Cubango', 'iso' => 'CCU', 'capital'=>'Menongue', 'municipalities' =>['Calai', 'Cuangar', 'Cuchi', 'Cuito Cuanavale', 'Dirico', 'Mavinga', 'Menongue', 'Nancova', 'Rivungo'] ],
+    ['name' => 'Cabinda', 'iso' => 'CAB', 'capital' => 'Cabinda', 'municipalities' => ['Belize', 'Buco-Zau', 'Cabinda', 'Cacongo']],
 
-    ['name'=> 'Cuanza Norte', 'iso' => 'CNO', 'capital'=>'Ndalatando', 'municipalities' =>['Ambaca', 'Banga', 'Bolongongo', 'Cambambe', 'Cazengo', 'Golungo Alto', 'Gonguembo', 'Lucala', 'Ndalatando', 'Quiculungo', 'Samba Caju'] ],
+    ['name' => 'Cuando-Cubango', 'iso' => 'CCU', 'capital' => 'Menongue', 'municipalities' => ['Calai', 'Cuangar', 'Cuchi', 'Cuito Cuanavale', 'Dirico', 'Mavinga', 'Menongue', 'Nancova', 'Rivungo']],
 
-    ['name'=> 'Cuanza Sul', 'iso' => 'CUS', 'capital'=>'Sumbe', 'municipalities' =>['Amboim', 'Cassongue', 'Cela', 'Conda', 'Ebo', 'Libolo',' Mussenfe', 'Porto Amboim','Quibala', 'Seles', 'Sumbe'] ],
+    ['name' => 'Cuanza Norte', 'iso' => 'CNO', 'capital' => 'Ndalatando', 'municipalities' => ['Ambaca', 'Banga', 'Bolongongo', 'Cambambe', 'Cazengo', 'Golungo Alto', 'Gonguembo', 'Lucala', 'Ndalatando', 'Quiculungo', 'Samba Caju']],
 
-    ['name'=> 'Cunene', 'iso' => 'CNN', 'capital'=>'Ondjiva', 'municipalities' =>['Cahama', 'Cuanhama', 'Curoca', 'Cuvelai', 'Namacunde', 'Ombadja', 'Ondjiva'] ],
+    ['name' => 'Cuanza Sul', 'iso' => 'CUS', 'capital' => 'Sumbe', 'municipalities' => ['Amboim', 'Cassongue', 'Cela', 'Conda', 'Ebo', 'Libolo', ' Mussenfe', 'Porto Amboim', 'Quibala', 'Seles', 'Sumbe']],
 
-    ['name'=> 'Huambo', 'iso' => 'HUA', 'capital'=>'Huambo', 'municipalities' =>['Bailundo', 'Cachiungo', 'Caála', 'Ecunha', 'Huambo', 'Londumbali', 'Longonjo', 'Mungo', 'Chicala-Choloanga', 'Chinjenje', 'Ucuma'] ],
+    ['name' => 'Cunene', 'iso' => 'CNN', 'capital' => 'Ondjiva', 'municipalities' => ['Cahama', 'Cuanhama', 'Curoca', 'Cuvelai', 'Namacunde', 'Ombadja', 'Ondjiva']],
 
-    ['name'=> 'Huila', 'iso' => 'HUI', 'capital'=>'Luabango', 'municipalities' =>['Caconda', 'Cacula', 'Caluquembe', 'Chiange', 'Chibia', 'Chicomba', 'Chipindo', 'Cuvango', 'Humpata', 'Jamba', 'Lubango', 'Matala', 'Quilengues', 'Quipungo'] ],
+    ['name' => 'Huambo', 'iso' => 'HUA', 'capital' => 'Huambo', 'municipalities' => ['Bailundo', 'Cachiungo', 'Caála', 'Ecunha', 'Huambo', 'Londumbali', 'Longonjo', 'Mungo', 'Chicala-Choloanga', 'Chinjenje', 'Ucuma']],
 
-    ['name'=> 'Luanda', 'iso' => 'LUA', 'capital'=>'Luanda', 'municipalities' =>['Belas', 'Cacuaco', 'Cazenga', 'Ícolo e Bengo', 'Luanda', 'Quilamba Quiaxi', 'Talatona', 'Viana'] ],
+    ['name' => 'Huila', 'iso' => 'HUI', 'capital' => 'Luabango', 'municipalities' => ['Caconda', 'Cacula', 'Caluquembe', 'Chiange', 'Chibia', 'Chicomba', 'Chipindo', 'Cuvango', 'Humpata', 'Jamba', 'Lubango', 'Matala', 'Quilengues', 'Quipungo']],
 
-    ['name'=> 'Lunda Norte', 'iso' => 'LNO', 'capital'=>'Dundo', 'municipalities' =>['Cambulo', 'Capenda-Camulemba', 'Caungula', 'Chitato', 'Cuango', 'Cuílo', 'Lóvua', 'Lubalo', 'Lucapa', 'Xá-Muteba', 'Dundo'] ],
+    ['name' => 'Luanda', 'iso' => 'LUA', 'capital' => 'Luanda', 'municipalities' => ['Belas', 'Cacuaco', 'Cazenga', 'Ícolo e Bengo', 'Luanda', 'Quilamba Quiaxi', 'Talatona', 'Viana']],
 
-    ['name'=> 'Luanda Sul', 'iso' => 'LSU', 'capital'=>'Saurimo', 'municipalities' =>['Cacolo', 'Dala', 'Muconda', 'Saurimo'] ],
+    ['name' => 'Lunda Norte', 'iso' => 'LNO', 'capital' => 'Dundo', 'municipalities' => ['Cambulo', 'Capenda-Camulemba', 'Caungula', 'Chitato', 'Cuango', 'Cuílo', 'Lóvua', 'Lubalo', 'Lucapa', 'Xá-Muteba', 'Dundo']],
 
-    ['name'=> 'Malanje', 'iso' => 'MAL', 'capital'=>'Malanje', 'municipalities' =>['Cacuso', 'Calandula', 'Cambundi-Catembo', 'Cangandala', 'Caombo', 'Cuaba Nzoji', 'Cunda-Dia-Baze', 'Luquembo', 'Malanje', 'Marimba', 'Massango', 'Mucari', 'Quela', 'Quirima'] ],
+    ['name' => 'Luanda Sul', 'iso' => 'LSU', 'capital' => 'Saurimo', 'municipalities' => ['Cacolo', 'Dala', 'Muconda', 'Saurimo']],
 
-    ['name'=> 'Moxico', 'iso' => 'MOX', 'capital'=>'Luena', 'municipalities' =>['Alto Zambeze', 'Bundas', 'Camanongue', 'Léua', 'Luau', 'Luacano', 'Luchazes', 'Cameia', 'Moxico'] ],
+    ['name' => 'Malanje', 'iso' => 'MAL', 'capital' => 'Malanje', 'municipalities' => ['Cacuso', 'Calandula', 'Cambundi-Catembo', 'Cangandala', 'Caombo', 'Cuaba Nzoji', 'Cunda-Dia-Baze', 'Luquembo', 'Malanje', 'Marimba', 'Massango', 'Mucari', 'Quela', 'Quirima']],
 
-    ['name'=> 'Namibe', 'iso' => 'NAM', 'capital'=>'Moçamedes', 'municipalities' =>['Bibala', 'Camucuio', 'Moçâmedes', 'Tômbua', 'Virei'] ],
+    ['name' => 'Moxico', 'iso' => 'MOX', 'capital' => 'Luena', 'municipalities' => ['Alto Zambeze', 'Bundas', 'Camanongue', 'Léua', 'Luau', 'Luacano', 'Luchazes', 'Cameia', 'Moxico']],
 
-    ['name'=> 'Uíge', 'iso' => 'UIG', 'capital'=>'Uíge', 'municipalities' =>['Alto Cauale', 'Ambuíla', 'Bembe', 'Buengas', 'Bungo', 'Damba', 'Milunga', 'Mucaba', 'Negage', 'Puri', 'Quimbele', 'Quitexe', 'Sanza Pombo', 'Songo', 'Uíge', 'Zombo'] ],
+    ['name' => 'Namibe', 'iso' => 'NAM', 'capital' => 'Moçamedes', 'municipalities' => ['Bibala', 'Camucuio', 'Moçâmedes', 'Tômbua', 'Virei']],
 
-    ['name'=> 'Zaire', 'iso' => 'ZAI', 'capital'=>'Mbanza Congo', 'municipalities' =>['Cuimba', 'Mbanza Congo', 'Nóqui', 'Nzeto', 'Soio', 'Tomboco'] ],
+    ['name' => 'Uíge', 'iso' => 'UIG', 'capital' => 'Uíge', 'municipalities' => ['Alto Cauale', 'Ambuíla', 'Bembe', 'Buengas', 'Bungo', 'Damba', 'Milunga', 'Mucaba', 'Negage', 'Puri', 'Quimbele', 'Quitexe', 'Sanza Pombo', 'Songo', 'Uíge', 'Zombo']],
+
+    ['name' => 'Zaire', 'iso' => 'ZAI', 'capital' => 'Mbanza Congo', 'municipalities' => ['Cuimba', 'Mbanza Congo', 'Nóqui', 'Nzeto', 'Soio', 'Tomboco']],
 ];;
 class AngoUtils implements AngoUtilsInterface
 {
     protected  $provinces;
 
-    public function __construct()
-    {
-       
-    }
 
     public static function formatcurrency(float $value): string
     {
         if ($value) {
-            $rules = numfmt_create("pt_AO", NumberFormatter::CURRENCY);
-            return numfmt_format_currency($rules, $value, 'AOA');
+            if (is_numeric($value)) {
+                $rules = numfmt_create("pt_AO", NumberFormatter::CURRENCY);
+                return numfmt_format_currency($rules, $value, 'AOA');
+            }
         }
     }
     public static function formatPhoneNumber(string $number, bool $code = true): string
-    {   
+    {
         $code_id = "+244 ";
         if (!$code) {
             $code_id = "";
         }
-         if(is_numeric($number)) {
+        if (is_numeric($number)) {
             if (strlen($number) == 9) {
                 $number = str_split($number);
                 $formated_number_array = [];
-                for ($i=0; $i <= 10 ; $i++) { 
+                for ($i = 0; $i <= 10; $i++) {
                     if ($i >= 0 && $i < 3) {
                         $formated_number_array[$i] = $number[$i];
                     }
@@ -79,37 +78,35 @@ class AngoUtils implements AngoUtilsInterface
                         $formated_number_array[$i] = "-";
                         continue;
                     }
-                    if ($i > 3 && $i <7) {
-                        $formated_number_array[$i] = $number[$i-1];
+                    if ($i > 3 && $i < 7) {
+                        $formated_number_array[$i] = $number[$i - 1];
                         continue;
                     }
                     if ($i > 7 && $i <= 10) {
-                        $formated_number_array[$i] = $number[$i-2];
+                        $formated_number_array[$i] = $number[$i - 2];
                         continue;
-                    }   
+                    }
                 }
-                $formated_number_string ="";
+                $formated_number_string = "";
                 foreach ($formated_number_array as $f) {
                     $formated_number_string .= $f;
                 }
-                return $code_id.$formated_number_string;
-            }else{
-                throw new InvalidArgumentException("O número de telefone deve conter 9 Dígitos.".strlen($number)." Digitos foi passado");  
+                return $code_id . $formated_number_string;
+            } else {
+                throw new InvalidArgumentException("O número de telefone deve conter 9 Dígitos." . strlen($number) . " Digitos foi passado");
             }
-        }else{
+        } else {
             throw new InvalidArgumentException("O número de telefone deve ser uma string numérica");
         }
-        
-        
     }
     public static function formatDate(string $timestamp): string
     {
         if (is_numeric($timestamp)) {
             throw new InvalidArgumentException("A função espera receber uma data no formato de string. Use {-} para separar dia, mês e ano");
             die;
-        }else{
-            return date('d M. Y', strtotime($timestamp)); 
-        } 
+        } else {
+            return date('d M. Y', strtotime($timestamp));
+        }
     }
     public static function validateIDNumber(string $id): bool
     {
@@ -147,22 +144,35 @@ class AngoUtils implements AngoUtilsInterface
     }
     public static function getAllProvinces(): array
     {
-        return $_SESSION['prov'];
+        $provinces = $_SESSION['provinces'];
+        return $provinces;
     }
     public static function getProvince(string $iso_code): array
     {
-        
-        return [];
+        if (!is_numeric($iso_code)) {
+            if (strlen($iso_code) == 3) {
+                $iso_code  = strtoupper($iso_code);
+                $provinces = $_SESSION['provinces'];
+                $iso_codes = array_column($provinces, 'iso');
+                $index = array_search($iso_code, $iso_codes);
+
+                if ($iso_code != $provinces[$index]['iso']) {
+                    return [];
+                }
+                return $provinces[$index];
+            }
+            throw new InvalidArgumentException("O código ISO deve conter 3 caracteres. ".strlen($iso_code)." caractere foi passado");
+        }
+        throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
 /*
 foreach (AngoUtils::getAllProvinces() as $prov) {
     echo '-> '.$prov['name'] ."\n";
     foreach ($prov['municipalities'] as $m) {
+         
         echo "   *  ". $m."\n";
     }
 }*/
 
-//print_r(AngoUtils::formatPhoneNumber("94314822722", true));
-
-print_r(AngoUtils::formatDate('05-06-2024'));
+//var_dump(AngoUtils::getProvince("ZAI"));
