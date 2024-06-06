@@ -5,9 +5,12 @@ namespace AngoUtils;
 session_start();
 
 require './interface/AngoUtilsInterface.php';
+require './../vendor/autoload.php';
+
 
 use InvalidArgumentException;
 use NumberFormatter;
+use AngoUtils\AngoUtilsInterface;
 
 $_SESSION['provinces'] = [
     ['name' => 'Bengo', 'iso' => 'BGO', 'capital' => 'Caxito', 'municipalities' => ['Ambriz', 'Bula Atumba', 'Dande', 'Dembos', 'Nambuangongo', 'Pango Aluquém']],
@@ -45,7 +48,8 @@ $_SESSION['provinces'] = [
     ['name' => 'Uíge', 'iso' => 'UIG', 'capital' => 'Uíge', 'municipalities' => ['Alto Cauale', 'Ambuíla', 'Bembe', 'Buengas', 'Bungo', 'Damba', 'Milunga', 'Mucaba', 'Negage', 'Puri', 'Quimbele', 'Quitexe', 'Sanza Pombo', 'Songo', 'Uíge', 'Zombo']],
 
     ['name' => 'Zaire', 'iso' => 'ZAI', 'capital' => 'Mbanza Congo', 'municipalities' => ['Cuimba', 'Mbanza Congo', 'Nóqui', 'Nzeto', 'Soio', 'Tomboco']],
-];;
+];
+
 class AngoUtils implements AngoUtilsInterface
 {
     protected  $provinces;
@@ -111,7 +115,6 @@ class AngoUtils implements AngoUtilsInterface
     public static function validateIDNumber(string $id): bool
     {
         $abbr = ['LA', 'LN', 'MX', 'HB', 'UG'];
-
         if (strlen($id) == 14) {
             $id_number = str_split($id);
             for ($i = 0; $i <= 8; $i++) {
@@ -155,24 +158,13 @@ class AngoUtils implements AngoUtilsInterface
                 $provinces = $_SESSION['provinces'];
                 $iso_codes = array_column($provinces, 'iso');
                 $index = array_search($iso_code, $iso_codes);
-
                 if ($iso_code != $provinces[$index]['iso']) {
                     return [];
                 }
                 return $provinces[$index];
             }
-            throw new InvalidArgumentException("O código ISO deve conter 3 caracteres. ".strlen($iso_code)." caractere foi passado");
+            throw new InvalidArgumentException("O código ISO deve conter 3 caracteres. " . strlen($iso_code) . " caractere foi passado");
         }
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
-/*
-foreach (AngoUtils::getAllProvinces() as $prov) {
-    echo '-> '.$prov['name'] ."\n";
-    foreach ($prov['municipalities'] as $m) {
-         
-        echo "   *  ". $m."\n";
-    }
-}*/
-
-//var_dump(AngoUtils::getProvince("ZAI"));

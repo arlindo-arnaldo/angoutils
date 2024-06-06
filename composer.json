@@ -2,7 +2,7 @@
     "name": "vendor/angoutils",
     "description": "Uma classe php com funcões proprias para validação de itens voltado para o mercado Angolano",
     "type": "library",
-    "licence" : "MIT",
+    "licence": "MIT",
     "autoload": {
         "psr-4": {
             "Vendor\\AngoUtils\\": "src/"
