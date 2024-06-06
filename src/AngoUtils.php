@@ -145,6 +145,17 @@ class AngoUtils implements AngoUtilsInterface
     {
         return true;
     }
+    public static function validatePhoneNumber(string $number):bool{
+        if (is_numeric($number)) {
+            if (strlen($number) == 9) {
+                $number_array = str_split($number);
+                if ($number_array[0] == '9' && in_array($number[1], ['1','2', '3', '4', '5'])) {
+                    return true;
+                }
+            }
+        }
+        return  false;
+    }
     public static function getAllProvinces(): array
     {
         $provinces = $_SESSION['provinces'];
@@ -168,3 +179,5 @@ class AngoUtils implements AngoUtilsInterface
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
+
+var_dump(AngoUtils::validatePhoneNumber('953148227'));

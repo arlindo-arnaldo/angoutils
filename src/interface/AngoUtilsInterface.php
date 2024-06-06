@@ -10,6 +10,8 @@ interface AngoUtilsInterface
      public static function formatDate(string $timestamp): string;
      public static function validateIDNumber(string $id): bool;
      public static function validateNIF(string $id): bool;
+     public static function validatePhoneNumber(string $number):bool;
      public static function getAllProvinces(): array;
      public static function getProvince(string $iso_code): array;
+
 }
