@@ -1,5 +1,5 @@
 {
-    "name": "angoutils/angoutils",
+    "name": "angoutil/angoutils",
     "description": "Uma classe php com funcões proprias para validação de itens voltado para o mercado Angolano",
     "type": "library",
     "licence": "MIT",

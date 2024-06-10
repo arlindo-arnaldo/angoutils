@@ -4,9 +4,6 @@ namespace AngoUtils;
 
 session_start();
 
-require './interface/AngoUtilsInterface.php';
-require './../vendor/autoload.php';
-
 
 use InvalidArgumentException;
 use NumberFormatter;
@@ -50,7 +47,7 @@ $_SESSION['provinces'] = [
     ['name' => 'Zaire', 'iso' => 'ZAI', 'capital' => 'Mbanza Congo', 'municipalities' => ['Cuimba', 'Mbanza Congo', 'Nóqui', 'Nzeto', 'Soio', 'Tomboco']],
 ];
 
-class AngoUtils implements AngoUtilsInterface
+class AngoUtils 
 {
     protected  $provinces;
 
@@ -181,13 +178,5 @@ class AngoUtils implements AngoUtilsInterface
     }
 }
 
-/*
-foreach (AngoUtils::getAllProvinces() as $province) {
-    print($province['name']." --- ". $province['iso']. " --- ".$province['capital']."\n");
-    foreach ($province['municipalities'] as $municipality) {
-        print("    ".$municipality."\n");
-    }
-
-}*/
 
 
