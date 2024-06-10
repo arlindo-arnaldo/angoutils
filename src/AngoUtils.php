@@ -180,4 +180,4 @@ class AngoUtils implements AngoUtilsInterface
     }
 }
 
-var_dump(AngoUtils::validatePhoneNumber('953148227'));
+
