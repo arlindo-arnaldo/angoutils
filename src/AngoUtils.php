@@ -69,6 +69,7 @@ class AngoUtils implements AngoUtilsInterface
         $code_id = "+244 ";
         if (!$code) {
             $code_id = "";
+            
         }
         if (is_numeric($number)) {
             if (strlen($number) == 9) {
@@ -104,7 +105,7 @@ class AngoUtils implements AngoUtilsInterface
         }
     }
     public static function formatDate(string $timestamp): string
-    {
+    { 
         if (is_numeric($timestamp)) {
             throw new InvalidArgumentException("A função espera receber uma data no formato de string. Use {-} para separar dia, mês e ano");
             die;
@@ -149,7 +150,7 @@ class AngoUtils implements AngoUtilsInterface
         if (is_numeric($number)) {
             if (strlen($number) == 9) {
                 $number_array = str_split($number);
-                if ($number_array[0] == '9' && in_array($number[1], ['1','2', '3', '4', '5'])) {
+                if ($number_array[0] == '9' && in_array($number[1], ['1','2', '3', '4', '5','9'])) {
                     return true;
                 }
             }
@@ -179,5 +180,14 @@ class AngoUtils implements AngoUtilsInterface
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
+
+/*
+foreach (AngoUtils::getAllProvinces() as $province) {
+    print($province['name']." --- ". $province['iso']. " --- ".$province['capital']."\n");
+    foreach ($province['municipalities'] as $municipality) {
+        print("    ".$municipality."\n");
+    }
+
+}*/
 
 
