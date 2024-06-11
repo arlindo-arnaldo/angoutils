@@ -5,7 +5,7 @@
     "licence": "MIT",
     "autoload": {
         "psr-4": {
-            "AngoUtils\\AngoUtils\\": "src/"
+            "AngoUtils\\": "src/"
         }
     },
     "authors": [

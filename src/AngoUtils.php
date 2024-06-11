@@ -7,7 +7,6 @@ session_start();
 
 use InvalidArgumentException;
 use NumberFormatter;
-use AngoUtils\AngoUtilsInterface;
 
 $_SESSION['provinces'] = [
     ['name' => 'Bengo', 'iso' => 'BGO', 'capital' => 'Caxito', 'municipalities' => ['Ambriz', 'Bula Atumba', 'Dande', 'Dembos', 'Nambuangongo', 'Pango Aluquém']],
