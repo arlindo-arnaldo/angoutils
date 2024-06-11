@@ -135,8 +135,8 @@ A função getProvince() espera receber como parâmetro o código ISO da provinc
 ```php
 <?php
     use AngoUtils\AngoUtils;
-    $province = AngoUtils::getProvince("LUA");
 
+    $province = AngoUtils::getProvince("LUA");
     var_dump($province);
 ?>
 ```
