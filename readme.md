@@ -1,6 +1,6 @@
 # PHP AngoUtils
 
-AngoUtils é um pacote do composer que agiliziza bastante a forma que você desenvolve em PHP.
+AngoUtils é um pacote do composer que agiliza bastante a forma que você desenvolve em PHP.
 Contendo recursos específicos para o contexto angolano.
 
 ## Instalação 

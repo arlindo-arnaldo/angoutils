@@ -110,7 +110,7 @@ class AngoUtils
     }
     public static function validateIDNumber(string $id): bool
     {
-        $abbr = ['LA', 'LN', 'MX', 'HB', 'UG'];
+        $abbr = ['LA', 'BO', 'BE', 'BA', 'CC', 'CE', 'HO', 'HA', 'CA', 'CN', 'CS', 'LN', 'LS', 'ME', 'MO', 'UE', 'ZE'];
         if (strlen($id) == 14) {
             $id_number = str_split($id);
             for ($i = 0; $i <= 8; $i++) {
