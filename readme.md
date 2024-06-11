@@ -27,7 +27,7 @@ composer require angoutils/angoutils
 <?php 
     use AngoUtils\AngoUtils;
 
-    $validated = AngoUtils::validateIDNumber("00569822LA087");
+    $validated = AngoUtils::validateIDNumber("009806566LA045");
     if($validated){
         echo "Bilhete  válido";
     }else{
