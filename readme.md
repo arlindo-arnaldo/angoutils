@@ -16,7 +16,7 @@ composer require angoutils/angoutils
  - Formatação de Moeda
  - Formatação de Datas
  - Formatação de números de telefone
- - Listagem de Provincias,capitais,municipios e código ISO
+ - Listagem de Provincias, capitais, municipios e código ISO
  - Filtro de Provincias
 
 ## Utilização
