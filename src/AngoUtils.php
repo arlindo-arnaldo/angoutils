@@ -113,25 +113,27 @@ class AngoUtils
         $abbr = ['LA', 'BO', 'BE', 'BA', 'CC', 'CE', 'HO', 'HA', 'CA', 'CN', 'CS', 'LN', 'LS', 'ME', 'MO', 'UE', 'ZE'];
         if (strlen($id) == 14) {
             $id_number = str_split($id);
-            for ($i = 0; $i <= 8; $i++) {
-                if (is_numeric($id_number[$i])) {
-                    continue;
-                } else {
-                    return false;
+            if ($id_number[0] == '0' && $id_number[1] == '0') {
+                for ($i = 0; $i <= 8; $i++) {
+                    if (is_numeric($id_number[$i])) {
+                        continue;
+                    } else {
+                        return false;
+                    }
                 }
-            }
-            if (is_string($id_number[9]) && is_string($id_number[10])) {
-                $prov = strtoupper($id_number[9]) . strtoupper($id_number[10]);
-            }
-            for ($i = 11; $i <= 13; $i++) {
-                if (is_numeric($id_number[$i])) {
-                    continue;
-                } else {
-                    return false;
+                if (is_string($id_number[9]) && is_string($id_number[10])) {
+                    $prov = strtoupper($id_number[9]) . strtoupper($id_number[10]);
                 }
-            }
-            if (in_array($prov, $abbr)) {
-                return true;
+                for ($i = 11; $i <= 13; $i++) {
+                    if (is_numeric($id_number[$i])) {
+                        continue;
+                    } else {
+                        return false;
+                    }
+                }
+                if (in_array($prov, $abbr)) {
+                    return true;
+                }
             }
         }
         return false;

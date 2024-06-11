@@ -46,8 +46,8 @@ Nota: Esta função não verifica se o número do bilhete existe. Apenas verific
     use AngoUtils\AngoUtils;
 
     $number = "943148227";
-    $validated_number = AngoUtils::formatPhoneNumber($number);
-    echo $validated_number;
+    $formated_number = AngoUtils::formatPhoneNumber($number);
+    echo $formated_number;
 
 ?>
 ```
@@ -62,8 +62,8 @@ Se pretender apenas o número sem o código +244, basta passar um boleano false 
     use AngoUtils\AngoUtils;
 
     $number = "943148227";
-    $validated_number = AngoUtils::formatPhoneNumber($number, false);
-    echo $validated_number;
+    $formated_number = AngoUtils::formatPhoneNumber($number, false);
+    echo $formated_number;
 
 ?>
 ```
