@@ -1,6 +1,6 @@
 {
     "name": "angoutil/angoutils",
-    "description": "Uma classe php com funcões proprias para validação de itens voltado para o mercado Angolano",
+    "description": "Um pacote do composer contendo recursos específicos para o contexto angolano",
     "type": "library",
     "licence": "MIT",
     "autoload": {
@@ -10,7 +10,7 @@
     },
     "authors": [
         {
-            "name": "Arlindo",
+            "name": "Arlindo Arlindo",
             "email": "arlindoarnaldocassuende@gmail.com"
         }
     ],

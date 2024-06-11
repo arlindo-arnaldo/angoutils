@@ -46,7 +46,7 @@ $_SESSION['provinces'] = [
     ['name' => 'Zaire', 'iso' => 'ZAI', 'capital' => 'Mbanza Congo', 'municipalities' => ['Cuimba', 'Mbanza Congo', 'Nóqui', 'Nzeto', 'Soio', 'Tomboco']],
 ];
 
-class AngoUtils 
+class AngoUtils
 {
     protected  $provinces;
 
@@ -65,7 +65,6 @@ class AngoUtils
         $code_id = "+244 ";
         if (!$code) {
             $code_id = "";
-            
         }
         if (is_numeric($number)) {
             if (strlen($number) == 9) {
@@ -101,7 +100,7 @@ class AngoUtils
         }
     }
     public static function formatDate(string $timestamp): string
-    { 
+    {
         if (is_numeric($timestamp)) {
             throw new InvalidArgumentException("A função espera receber uma data no formato de string. Use {-} para separar dia, mês e ano");
             die;
@@ -142,11 +141,12 @@ class AngoUtils
     {
         return true;
     }
-    public static function validatePhoneNumber(string $number):bool{
+    public static function validatePhoneNumber(string $number): bool
+    {
         if (is_numeric($number)) {
             if (strlen($number) == 9) {
                 $number_array = str_split($number);
-                if ($number_array[0] == '9' && in_array($number[1], ['1','2', '3', '4', '5','9'])) {
+                if ($number_array[0] == '9' && in_array($number[1], ['1', '2', '3', '4', '5', '9'])) {
                     return true;
                 }
             }
@@ -176,6 +176,3 @@ class AngoUtils
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
-
-
-
