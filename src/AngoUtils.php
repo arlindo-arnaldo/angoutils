@@ -52,6 +52,8 @@ class AngoUtils
             if (is_numeric($value)) {
                 $rules = numfmt_create("pt_AO", NumberFormatter::CURRENCY);
                 return numfmt_format_currency($rules, $value, 'AOA');
+            }else {
+                throw new InvalidArgumentException("O valor deve ser um número ou uma string numérica");
             }
         }
     }
@@ -103,7 +105,7 @@ class AngoUtils
             return date('d M. Y', strtotime($timestamp));
         }
     }
-    public static function validateIDNumber(string $id): bool
+    public static function validateBINumber(string $id): bool
     {
         $abbr = ['LA', 'BO', 'BE', 'BA', 'CC', 'CE', 'HO', 'HA', 'CA', 'CN', 'CS', 'LN', 'LS', 'ME', 'MO', 'UE', 'ZE'];
         if (strlen($id) == 14) {
@@ -136,7 +138,7 @@ class AngoUtils
 
     public static function validateNIF(string $id): bool
     {
-        return true;
+        return self::validateBINumber($id);
     }
     public static function validatePhoneNumber(string $number): bool
     {
@@ -174,4 +176,4 @@ class AngoUtils
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
-var_dump(AngoUtils::getProvince("LUA"));
+var_dump(AngoUtils::validateNIF("008702377LA046"));

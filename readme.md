@@ -24,17 +24,39 @@ composer require angoutils/angoutils
 
 ## Utilização
 
-### Validando o número de Bilhete
+Depois de instalar o pacote, tenha certeza que você incluiu correctamente o autoload.php do composer.
 
 ```php
+<?php
+    require __DIR__.'/vendor/autoload.php';
+?>
+```
+
+### Validando o número de Bilhete
+
+``` php
 <?php 
     use AngoUtils\AngoUtils;
 
-    $validated = AngoUtils::validateIDNumber("009806566LA045");
+    $validated = AngoUtils::validateBINumber("009806566LA045");
     if($validated){
         echo "Bilhete  válido";
     }else{
         echo "Bilhete inválido";
+    }
+?>
+```
+### Validando o NIF
+
+``` php
+<?php 
+    use AngoUtils\AngoUtils;
+
+    $validated = AngoUtils::validateNIF("009806566LA045");
+    if($validated){
+        echo "NIF  válido";
+    }else{
+        echo "NIF inválido";
     }
 ?>
 ```
