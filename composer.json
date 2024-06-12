@@ -2,7 +2,7 @@
     "name": "angoutil/angoutils",
     "description": "Um pacote do composer contendo recursos específicos para o contexto angolano",
     "type": "library",
-    "licence": "MIT",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "AngoUtils\\": "src/"
