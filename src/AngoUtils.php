@@ -176,4 +176,4 @@ class AngoUtils
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
-var_dump(AngoUtils::validateNIF("008702377LA046"));
+gi
