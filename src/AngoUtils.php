@@ -176,4 +176,3 @@ class AngoUtils
         throw new InvalidArgumentException("O código ISO não deve ser um número ou uma string numérica.");
     }
 }
-
